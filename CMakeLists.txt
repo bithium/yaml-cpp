@@ -12,7 +12,10 @@ endif()
 if(POLICY CMP0015)
 	cmake_policy(SET CMP0015 OLD)
 endif()
-
+# see http://www.cmake.org/cmake/help/cmake-2-8-docs.html#policy:CMP0048
+if(POLICY CMP0048)
+  cmake_policy(SET CMP0048 OLD)
+endif()
 include(CheckCXXCompilerFlag)
 
 
