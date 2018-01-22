@@ -17,7 +17,10 @@ if(POLICY CMP0042)
 	# Enable MACOSX_RPATH by default.
 	cmake_policy(SET CMP0042 NEW)
 endif()
-
+# see http://www.cmake.org/cmake/help/cmake-2-8-docs.html#policy:CMP0048
+if(POLICY CMP0048)
+  cmake_policy(SET CMP0048 OLD)
+endif()
 include(CheckCXXCompilerFlag)
 
 
@@ -157,7 +160,6 @@ endif()
 if(CMAKE_CXX_COMPILER_ID MATCHES "GNU" OR
    CMAKE_CXX_COMPILER_ID MATCHES "Clang" OR
    CMAKE_CXX_COMPILER_ID MATCHES "Intel")
-
 	### General stuff
 	if(WIN32)
 		set(CMAKE_SHARED_LIBRARY_PREFIX "")	# DLLs do not have a "lib" prefix
